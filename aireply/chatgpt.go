@@ -38,7 +38,7 @@ type chatGPTRequestBody struct {
 
 const (
 	// ChatGPTURL api地址
-	ChatGPTURL = "https://api.openai.com/v1/"
+	ChatGPTURL = "https://api.openai.com/v1/chat/completions"
 )
 
 // NewChatGPT ...
@@ -69,7 +69,7 @@ func (c *ChatGPT) TalkPlain(_ int64, msg, nickname string) string {
 
 func chat(msg string, apiKey string, url string) string {
 	requestBody := chatGPTRequestBody{
-		Model:            "text-davinci-003",
+		Model:            "gpt-4o",
 		Prompt:           msg,
 		MaxTokens:        2048,
 		Temperature:      0.7,
